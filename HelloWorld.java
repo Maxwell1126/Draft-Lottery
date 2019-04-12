@@ -7,8 +7,9 @@ public class HelloWorld {
         String[] technologies = {"React", "JavaScript", "Node.JS",
                                  "MySQL", "PotgreSQL", "Express",
                                  "Git", "npm"};
-        
-        System.out.println(technologies[0]);
+        for (int i=0; i<technologies.length; i++){
+            System.out.println(technologies[i]);
+        } 
 
     }
 
