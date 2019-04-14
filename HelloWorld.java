@@ -22,7 +22,7 @@ public class HelloWorld {
         String sixthPlace = "";
         String seventhPlace = "";
         String eightPlace = "";
-        while (thirdPlace.length()==0) {
+        while (fourthPlace.length() == 0) {
             double x = (int) (Math.random() * ((12 - 1) + 1)) + 1;
             double y = (int) (Math.random() * ((4 - 1) + 1)) + 1;
             // determine first place.
@@ -48,63 +48,107 @@ public class HelloWorld {
                 System.out.println("number y " + y);
                 System.out.println("First place is " + firstPlace);
 
-            //determine second place.
-            } else if ((firstPlace.length() > 0) && (secondPlace.length() == 0)){
-                if ((x == (1) | x == (2) | x == (3)) && (y == 1) | (y == 2)
-                    && (firstPlace != "Blue")) {
+                // determine second place.
+            } else if ((firstPlace.length() > 0) && (secondPlace.length() == 0)) {
+                if ((x == (1) | x == (2) | x == (3)) && (y == 1) | (y == 2) && (firstPlace != "Blue")) {
                     secondPlace = "Blue";
-                } else if (((x == 1) | (x == 2) | (x == 3)) && (y == 3) | (y == 4)
-                    && (firstPlace != "Gray")) {
+                    System.out.println("Second place is " + secondPlace);
+                } else if (((x == 1) | (x == 2) | (x == 3)) && (y == 3) | (y == 4) && (firstPlace != "Gray")) {
                     secondPlace = "Gray";
-                } else if (x == (4) | x == (5) | x == (6) && (y == 1) | (y == 2)
-                          && (firstPlace != "Red")) {
+                    System.out.println("Second place is " + secondPlace);
+                } else if (x == (4) | x == (5) | x == (6) && (y == 1) | (y == 2) && (firstPlace != "Red")) {
                     secondPlace = "Red";
-                } else if (x == (4) | x == (5) | x == (6) && (y == 3) | (y == 4)
-                            && (firstPlace != "Purple")){
+                    System.out.println("Second place is " + secondPlace);
+                } else if (x == (4) | x == (5) | x == (6) && (y == 3) | (y == 4) && (firstPlace != "Purple")) {
                     secondPlace = "Purple";
-                } else if (x == (7) | x == (8) | x == (9) && (y == 1) | (y == 2)
-                            && (firstPlace != "Turquoise")) {
+                    System.out.println("Second place is " + secondPlace);
+                } else if (x == (7) | x == (8) | x == (9) && (y == 1) | (y == 2) && (firstPlace != "Turquoise")) {
                     secondPlace = "Turquoise";
-                } else if (x == (7) | x == (8) | x == (9) && (y == 3) | (y == 4) 
-                    && (firstPlace != "Green")) {
+                    System.out.println("Second place is " + secondPlace);
+                } else if (x == (7) | x == (8) | x == (9) && (y == 3) | (y == 4) && (firstPlace != "Green")) {
                     secondPlace = "Green";
-                } else if (x == (10) | x == (11) | x == (12) && (y == 1) | (y == 2)
-                            && (firstPlace != "Tan")) {
+                    System.out.println("Second place is " + secondPlace);
+                } else if (x == (10) | x == (11) | x == (12) && (y == 1) | (y == 2) && (firstPlace != "Tan")) {
                     secondPlace = "Tan";
-                } else if(firstPlace != "Orange"){
+                    System.out.println("Second place is " + secondPlace);
+                } else if (firstPlace != "Orange") {
                     secondPlace = "Orange";
+                    System.out.println("Second place is " + secondPlace);
                 }
                 System.out.println("number x " + x);
                 System.out.println("number y " + y);
-                System.out.println("Second place is "+secondPlace);
-            } else if ((firstPlace.length() > 0) && (secondPlace.length() > 0) && (thirdPlace.length()==0)) {
-                if ((x == (1) | x == (2) | x == (3)) && (y == 1) | (y == 2) && 
-                        ((firstPlace != "Blue") && (secondPlace != "Blue"))) {
+                
+            } else if ((firstPlace.length() > 0) && (secondPlace.length() > 0) && (thirdPlace.length() == 0)) {
+                if ((x == (1) | x == (2) | x == (3)) && (y == 1) | (y == 2)
+                        && ((firstPlace != "Blue") && (secondPlace != "Blue"))) {
                     thirdPlace = "Blue";
-                } else if (((x == 1) | (x == 2) | (x == 3)) && (y == 3) | (y == 4) && 
-                        ((firstPlace != "Gray") && (secondPlace != "Gray"))) {
+                    System.out.println("Third place is " + thirdPlace);
+                } else if (((x == 1) | (x == 2) | (x == 3)) && (y == 3) | (y == 4)
+                        && ((firstPlace != "Gray") && (secondPlace != "Gray"))) {
                     thirdPlace = "Gray";
-                } else if (x == (4) | x == (5) | x == (6) && (y == 1) | (y == 2) &&
-                        ((firstPlace != "Red") && (secondPlace != "Red"))) {
+                    System.out.println("Third place is " + thirdPlace);
+                } else if (x == (4) | x == (5) | x == (6) && (y == 1) | (y == 2)
+                        && ((firstPlace != "Red") && (secondPlace != "Red"))) {
                     thirdPlace = "Red";
-                } else if (x == (4) | x == (5) | x == (6) && (y == 3) | (y == 4) &&
-                        ((firstPlace != "Purple") && (secondPlace != "Purple"))) {
+                    System.out.println("Third place is " + thirdPlace);
+                } else if (x == (4) | x == (5) | x == (6) && (y == 3) | (y == 4)
+                        && ((firstPlace != "Purple") && (secondPlace != "Purple"))) {
                     thirdPlace = "Purple";
-                } else if (x == (7) | x == (8) | x == (9) && (y == 1) | (y == 2) && 
-                        ((firstPlace != "Turquoise") && (secondPlace != "Turquoise"))) {
+                    System.out.println("Third place is " + thirdPlace);
+                } else if (x == (7) | x == (8) | x == (9) && (y == 1) | (y == 2)
+                        && ((firstPlace != "Turquoise") && (secondPlace != "Turquoise"))) {
                     thirdPlace = "Turquoise";
-                } else if (x == (7) | x == (8) | x == (9) && (y == 3) | (y == 4) && 
-                ((firstPlace != "Green") && (secondPlace != "Green"))) {
+                    System.out.println("Third place is " + thirdPlace);
+                } else if (x == (7) | x == (8) | x == (9) && (y == 3) | (y == 4)
+                        && ((firstPlace != "Green") && (secondPlace != "Green"))) {
                     thirdPlace = "Green";
-                } else if (x == (10) | x == (11) | x == (12) && (y == 1) | (y == 2) &&
-                        ((firstPlace != "Tan") && (secondPlace != "Tan"))) {
+                    System.out.println("Third place is " + thirdPlace);
+                } else if (x == (10) | x == (11) | x == (12) && (y == 1) | (y == 2)
+                        && ((firstPlace != "Tan") && (secondPlace != "Tan"))) {
                     thirdPlace = "Tan";
+                    System.out.println("Third place is " + thirdPlace);
                 } else if ((firstPlace != "Orange") && (secondPlace != "Orange")) {
                     thirdPlace = "Orange";
+                    System.out.println("Third place is " + thirdPlace);
                 }
                 System.out.println("number x " + x);
                 System.out.println("number y " + y);
-                System.out.println("Third place is " + thirdPlace);
+                
+            } else if ((firstPlace.length() > 0) && (secondPlace.length() > 0) && (thirdPlace.length() > 0) && (fourthPlace.length()==0)) {
+                if ((x == (1) | x == (2) | x == (3)) && (y == 1) | (y == 2)
+                        && ((firstPlace != "Blue") && (secondPlace != "Blue"))) {
+                    fourthPlace = "Blue";
+                    System.out.println("Fourth place is " + fourthPlace);
+                } else if (((x == 1) | (x == 2) | (x == 3)) && (y == 3) | (y == 4)
+                        && ((firstPlace != "Gray") && (secondPlace != "Gray"))) {
+                    fourthPlace = "Gray";
+                    System.out.println("Fourth place is " + fourthPlace);
+                } else if (x == (4) | x == (5) | x == (6) && (y == 1) | (y == 2)
+                        && ((firstPlace != "Red") && (secondPlace != "Red"))) {
+                    fourthPlace = "Red";
+                    System.out.println("Fourth place is " + fourthPlace);
+                } else if (x == (4) | x == (5) | x == (6) && (y == 3) | (y == 4)
+                        && ((firstPlace != "Purple") && (secondPlace != "Purple"))) {
+                    fourthPlace = "Purple";
+                    System.out.println("Fourth place is " + fourthPlace);
+                } else if (x == (7) | x == (8) | x == (9) && (y == 1) | (y == 2)
+                        && ((firstPlace != "Turquoise") && (secondPlace != "Turquoise"))) {
+                    fourthPlace = "Turquoise";
+                    System.out.println("Fourth place is " + fourthPlace);
+                } else if (x == (7) | x == (8) | x == (9) && (y == 3) | (y == 4)
+                        && ((firstPlace != "Green") && (secondPlace != "Green"))) {
+                    fourthPlace = "Green";
+                    System.out.println("Fourth place is " + fourthPlace);
+                } else if (x == (10) | x == (11) | x == (12) && (y == 1) | (y == 2)
+                        && ((firstPlace != "Tan") && (secondPlace != "Tan"))) {
+                    fourthPlace = "Tan";
+                    System.out.println("Fourth place is " + fourthPlace);
+                } else if ((firstPlace != "Orange") && (secondPlace != "Orange")) {
+                    fourthPlace = "Orange";
+                    System.out.println("Fourth place is " + fourthPlace);
+                }
+                System.out.println("number x " + x);
+                System.out.println("number y " + y);  
             }
         }
 
