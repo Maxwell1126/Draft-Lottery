@@ -2,7 +2,6 @@ import java.util.function.ToIntFunction;
 import java.util.ArrayList;
 import java.util.Collections;
 
-
 public class DraftLottery {
 
     public static void main(String[] args) {
@@ -21,12 +20,20 @@ public class DraftLottery {
         String twelvthPlace = "";
         String thirteenthPlace = "";
         String fourteenthPlace = "";
+
         ArrayList<LotteryTeam> lotteryTeams = new ArrayList<LotteryTeam>();
         LotteryTeam newYork = new LotteryTeam();
         newYork.teamName = "New York";
         newYork.teamSeed = 1;
         lotteryTeams.add(newYork);
-        System.out.println(lotteryTeams.get(0).teamName);
+        LotteryTeam cleveland = new LotteryTeam();
+        cleveland.teamName = "Cleveland";
+        cleveland.teamSeed = 2;
+        lotteryTeams.add(cleveland);
+
+        for(int i = 0; lotteryTeams.size() > i; i++){
+            System.out.println(lotteryTeams.get(i).teamName +' '+ lotteryTeams.get(i).teamSeed);
+        }
         // ArrayList<LotteryTeam> lotteryTeams= { ("New York", 1), "Cleveland", "Phoenix", "Chicago", "Atlanta", "Washington", "New Orleans",
         //                    "Dallas", "Memphis", "Minnesota", "Los Angeles", "Sacremento", "Miami", "Charlotte"  };
         ArrayList<LotteryTeam> bottomTwelve = new ArrayList<LotteryTeam>();

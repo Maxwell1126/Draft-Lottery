@@ -5,6 +5,6 @@ public class LotteryTeam {
     public int teamSeed;
 
     public static void main(String[] args) {
-        LotteryTeam lotteryTeam = new LotteryTeam();
+        
     }
 }
