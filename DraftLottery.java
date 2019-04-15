@@ -8,51 +8,60 @@ public class DraftLottery {
         String secondPlace = "";
         String thirdPlace = "";
         String fourthPlace = "";
-        String fifthPlace = "";
-        String sixthPlace = "";
-        String seventhPlace = "";
-        String eightPlace = "";
+        // String fifthPlace = "";
+        // String sixthPlace = "";
+        // String seventhPlace = "";
+        // String eightPlace = "";
 
-        while (sixthPlace.length() == 0) {
-            double x = (int) (Math.random() * ((12 - 1) + 1)) + 1;
-            double y = (int) (Math.random() * ((4 - 1) + 1)) + 1;
+
+        while (fourthPlace.length() == 0) {
+            double winningNumber = (int) (Math.random() * ((1000 - 1) + 1)) + 1;
             String winner = "";
-            if ((x == (1) | x == (2) | x == (3)) && (y == 1) | (y == 2)) {
-                winner = "Blue";
-            } else if (((x == 1) | (x == 2) | (x == 3)) && (y == 3) | (y == 4)) {
-                winner = "Gray";
-            } else if (x == (4) | x == (5) | x == (6) && (y == 1) | (y == 2)) {
-                winner = "Red";
-            } else if (x == (4) | x == (5) | x == (6) && (y == 3) | (y == 4)) {
-                winner = "Purple";
-            } else if (x == (7) | x == (8) | x == (9) && (y == 1) | (y == 2)) {
-                winner = "Turquoise";
-            } else if (x == (7) | x == (8) | x == (9) && (y == 3) | (y == 4)) {
-                winner = "Green";
-            } else if (x == (10) | x == (11) | x == (12) && (y == 1) | (y == 2)) {
-                winner = "Tan";
-            } else {
-                winner = "Orange";
+            if (winningNumber < 141) {
+                winner = "New York";
+            } else if ((winningNumber >= 141) && (winningNumber <= 278)) {
+                winner = "Cleveland";
+            } else if ((winningNumber >= 281) && (winningNumber <= 420)) {
+                winner = "Phoenix";
+            } else if ((winningNumber >= 421) && (winningNumber <= 545)) {
+                winner = "Chicago";
+            } else if ((winningNumber >= 546) && (winningNumber <= 650)) {
+                winner = "Atlanta";
+            } else if ((winningNumber >= 651) && (winningNumber <= 740)) {
+                winner = "Washington";
+            } else if ((winningNumber >= 741) && (winningNumber <= 815)) {
+                winner = "New Orleans";
+            } else if((winningNumber >= 816) && (winningNumber <= 875)){
+                winner = "Dallas";
+            } else if((winningNumber >= 876) && (winningNumber <= 920)){
+                winner = "Memphis";
+            } else if ((winningNumber >= 921) && (winningNumber <= 950)){
+                winner = "Minnesota";
+            } else if ((winningNumber >= 951) && (winningNumber <= 970)){
+                winner = "Los Angeles";
+            } else if ((winningNumber >= 971) && (winningNumber <= 985)){
+                winner = "Sacremento";
+            } else if ((winningNumber >= 986) && (winningNumber <= 995)){
+                winner = "Miami";
+            } else if ((winningNumber >= 996) && (winningNumber <= 1000)){
+                winner = "Charlotte";
             }
             // determine first place.
             if (firstPlace.length() == 0) {
-                if(winner != ""){
-                    firstPlace = winner;
-                    System.out.println("First place is " + firstPlace);
-                }
-                System.out.println("number x " + x);
-                System.out.println("number y " + y);
+                firstPlace = winner;
+                System.out.println("First place is " + firstPlace);
+                System.out.println("Winning Number: " + winningNumber);
                 // determine second place.
             //determine second place or check to see that it has been fulfilled. 
-            } else if ((firstPlace.length() > 0) && (secondPlace.length() == 0)) {
+            } 
+            else if ((firstPlace.length() > 0) && (secondPlace.length() == 0)) {
                 // determine if the winner has already won a higher place. Re-roll if that
                 // happens.
                 if(firstPlace != winner){
                     secondPlace = winner;
                     System.out.println("Second place is " + secondPlace);
                 }
-                System.out.println("number x " + x);
-                System.out.println("number y " + y);
+                System.out.println("Winning Number: " + winningNumber);
 
                 // determine third place.
             } else if ((firstPlace.length() > 0) && (secondPlace.length() > 0) && (thirdPlace.length() == 0)) {
@@ -62,8 +71,7 @@ public class DraftLottery {
                     thirdPlace = winner;
                     System.out.println("Third place is " + thirdPlace);
                 } 
-                System.out.println("number x " + x);
-                System.out.println("number y " + y);
+                System.out.println("Winning Number: " + winningNumber);
 
                 // determine fourth place.
             } else if ((firstPlace.length() > 0) && (secondPlace.length() > 0) && (thirdPlace.length() > 0)
@@ -74,35 +82,33 @@ public class DraftLottery {
                             fourthPlace = winner;
                             System.out.println("Fourth place is " + fourthPlace);
                         }
-                System.out.println("number x " + x);
-                System.out.println("number y " + y);
+                System.out.println("Winning Number: " + winningNumber);
+            } 
+            // else if ((firstPlace.length() > 0) && (secondPlace.length() > 0) && (thirdPlace.length() > 0)
+            //         && (fourthPlace.length() > 0) && (fifthPlace.length() == 0)) {
+            //             // determine if the winner has already won a higher place. Re-roll if that
+            //     // happens.
+            //             if((firstPlace != winner) && (secondPlace != winner) && (thirdPlace != winner)
+            //             && (fourthPlace != winner)){
+            //                 fifthPlace = winner;
+            //                 System.out.println("Fifth place is " + fifthPlace);
+            //             }
+            //     System.out.println("number x " + x);
+            //     System.out.println("number y " + y);
+            // }
 
-                // determine fifth place.
-            } else if ((firstPlace.length() > 0) && (secondPlace.length() > 0) && (thirdPlace.length() > 0)
-                    && (fourthPlace.length() > 0) && (fifthPlace.length() == 0)) {
-                        // determine if the winner has already won a higher place. Re-roll if that
-                // happens.
-                        if((firstPlace != winner) && (secondPlace != winner) && (thirdPlace != winner)
-                        && (fourthPlace != winner)){
-                            fifthPlace = winner;
-                            System.out.println("Fifth place is " + fifthPlace);
-                        }
-                System.out.println("number x " + x);
-                System.out.println("number y " + y);
-            }
-
-            // determine if sixth place is unfulfilled.
-            else if ((firstPlace.length() > 0) && (secondPlace.length() > 0) && (thirdPlace.length() > 0)
-                    && (fourthPlace.length() > 0) && (fifthPlace.length() > 0) && (sixthPlace.length() == 0)) {
-                        //determine if the winner has already won a higher place. Re-roll if that happens.
-                        if((firstPlace != winner) && (secondPlace != winner) && (thirdPlace != winner)
-                        && (fourthPlace != winner ) && (fifthPlace != winner)){
-                            sixthPlace = winner;
-                            System.out.println("Sixth place is " + winner);
-                        }
-                System.out.println("number x " + x);
-                System.out.println("number y " + y);
-            }
+            // // determine if sixth place is unfulfilled.
+            // else if ((firstPlace.length() > 0) && (secondPlace.length() > 0) && (thirdPlace.length() > 0)
+            //         && (fourthPlace.length() > 0) && (fifthPlace.length() > 0) && (sixthPlace.length() == 0)) {
+            //             //determine if the winner has already won a higher place. Re-roll if that happens.
+            //             if((firstPlace != winner) && (secondPlace != winner) && (thirdPlace != winner)
+            //             && (fourthPlace != winner ) && (fifthPlace != winner)){
+            //                 sixthPlace = winner;
+            //                 System.out.println("Sixth place is " + winner);
+            //             }
+            //     System.out.println("number x " + x);
+            //     System.out.println("number y " + y);
+            // }
         }
 
     }
