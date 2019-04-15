@@ -1,4 +1,7 @@
 import java.util.function.ToIntFunction;
+import java.util.ArrayList;
+import java.util.Collections;
+
 
 public class DraftLottery {
 
@@ -8,10 +11,25 @@ public class DraftLottery {
         String secondPlace = "";
         String thirdPlace = "";
         String fourthPlace = "";
-        // String fifthPlace = "";
-        // String sixthPlace = "";
-        // String seventhPlace = "";
-        // String eightPlace = "";
+        String fifthPlace = "";
+        String sixthPlace = "";
+        String seventhPlace = "";
+        String eightPlace = "";
+        String ninthPlace = "";
+        String tenthPlace = "";
+        String eleventhPlace = "";
+        String twelvthPlace = "";
+        String thirteenthPlace = "";
+        String fourteenthPlace = "";
+        ArrayList<LotteryTeam> lotteryTeams = new ArrayList<LotteryTeam>();
+        LotteryTeam newYork = new LotteryTeam();
+        newYork.teamName = "New York";
+        newYork.teamSeed = 1;
+        lotteryTeams.add(newYork);
+        System.out.println(lotteryTeams.get(0).teamName);
+        // ArrayList<LotteryTeam> lotteryTeams= { ("New York", 1), "Cleveland", "Phoenix", "Chicago", "Atlanta", "Washington", "New Orleans",
+        //                    "Dallas", "Memphis", "Minnesota", "Los Angeles", "Sacremento", "Miami", "Charlotte"  };
+        ArrayList<LotteryTeam> bottomTwelve = new ArrayList<LotteryTeam>();
 
 
         while (fourthPlace.length() == 0) {
@@ -84,32 +102,6 @@ public class DraftLottery {
                         }
                 System.out.println("Winning Number: " + winningNumber);
             } 
-            // else if ((firstPlace.length() > 0) && (secondPlace.length() > 0) && (thirdPlace.length() > 0)
-            //         && (fourthPlace.length() > 0) && (fifthPlace.length() == 0)) {
-            //             // determine if the winner has already won a higher place. Re-roll if that
-            //     // happens.
-            //             if((firstPlace != winner) && (secondPlace != winner) && (thirdPlace != winner)
-            //             && (fourthPlace != winner)){
-            //                 fifthPlace = winner;
-            //                 System.out.println("Fifth place is " + fifthPlace);
-            //             }
-            //     System.out.println("number x " + x);
-            //     System.out.println("number y " + y);
-            // }
-
-            // // determine if sixth place is unfulfilled.
-            // else if ((firstPlace.length() > 0) && (secondPlace.length() > 0) && (thirdPlace.length() > 0)
-            //         && (fourthPlace.length() > 0) && (fifthPlace.length() > 0) && (sixthPlace.length() == 0)) {
-            //             //determine if the winner has already won a higher place. Re-roll if that happens.
-            //             if((firstPlace != winner) && (secondPlace != winner) && (thirdPlace != winner)
-            //             && (fourthPlace != winner ) && (fifthPlace != winner)){
-            //                 sixthPlace = winner;
-            //                 System.out.println("Sixth place is " + winner);
-            //             }
-            //     System.out.println("number x " + x);
-            //     System.out.println("number y " + y);
-            // }
         }
-
     }
 }
