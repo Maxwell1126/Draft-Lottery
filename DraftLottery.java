@@ -188,8 +188,10 @@ public class DraftLottery {
             // determine first place.
             if (firstPlace.length() == 0) {
                 firstPlace = winner;
+                System.out.println("  ");
                 System.out.println("First place is " + firstPlace);
                 System.out.println("Winning Number: " + winningNumber);
+                System.out.println("  ");
                 // determine second place.
             //determine second place or check to see that it has been fulfilled. 
             } 
@@ -200,6 +202,7 @@ public class DraftLottery {
                     secondPlace = winner;
                     System.out.println("Second place is " + secondPlace);
                     System.out.println("Winning Number: " + winningNumber);
+                    System.out.println("  ");
                 }  
 
                 // determine third place.
@@ -210,6 +213,7 @@ public class DraftLottery {
                     thirdPlace = winner;
                     System.out.println("Third place is " + thirdPlace);
                     System.out.println("Winning Number: " + winningNumber);
+                    System.out.println("  ");
                 } 
 
                 // determine fourth place.
@@ -283,6 +287,7 @@ public class DraftLottery {
             System.out.println(team.finalPlace + " " + team.teamName
                                 + " pre-draft seed: " + team.teamSeed);
         }
+        System.out.println("  ");
     }
 }
 
