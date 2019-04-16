@@ -199,8 +199,8 @@ public class DraftLottery {
                 if(firstPlace != winner){
                     secondPlace = winner;
                     System.out.println("Second place is " + secondPlace);
-                }
-                System.out.println("Winning Number: " + winningNumber);
+                    System.out.println("Winning Number: " + winningNumber);
+                }  
 
                 // determine third place.
             } else if ((firstPlace.length() > 0) && (secondPlace.length() > 0) && (thirdPlace.length() == 0)) {
@@ -209,8 +209,8 @@ public class DraftLottery {
                 if((firstPlace != winner) && (secondPlace != winner)){
                     thirdPlace = winner;
                     System.out.println("Third place is " + thirdPlace);
+                    System.out.println("Winning Number: " + winningNumber);
                 } 
-                System.out.println("Winning Number: " + winningNumber);
 
                 // determine fourth place.
             } else if ((firstPlace.length() > 0) && (secondPlace.length() > 0) && (thirdPlace.length() > 0)
@@ -220,8 +220,9 @@ public class DraftLottery {
                         if((firstPlace != winner) && (secondPlace != winner) && (thirdPlace != winner)){
                             fourthPlace = winner;
                             System.out.println("Fourth place is " + fourthPlace);
+                            System.out.println("Winning Number: " + winningNumber);
+                            System.out.println("  ");
                         }
-                System.out.println("Winning Number: " + winningNumber);
             } 
         }
 
@@ -279,7 +280,8 @@ public class DraftLottery {
         //This sorts all the teams in the finalOrder array by their final placement.
         Collections.sort(finalOrder, new PlaceComparator());
         for (LotteryTeam team : finalOrder) {
-            System.out.println(team.teamName);
+            System.out.println(team.finalPlace + " " + team.teamName
+                                + " pre-draft seed: " + team.teamSeed);
         }
     }
 }
