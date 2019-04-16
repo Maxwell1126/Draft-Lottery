@@ -3,23 +3,25 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+//create team objects with names, original seedings, and final placements.
 class LotteryTeam {
     public String teamName;
     public Integer teamSeed;
     public Integer finalPlace;
 
-    // public static void main(String[] args) {
-
-    // }
+    //method that gets the original seed of teams.
     public int getSeed(){
         return this.teamSeed;
     }
 
+    //method that gets the final placement of teams.
     public int getPlace() {
         return this.finalPlace;
     }
 
 }
+
+//Used to organize teams 5-14 by their seeding.
 class SeedComparator implements Comparator<LotteryTeam> {
 
     @Override
@@ -37,6 +39,7 @@ class SeedComparator implements Comparator<LotteryTeam> {
     }
 }
 
+//used to organize teams 1-14 based on thier final placement.
 class PlaceComparator implements Comparator<LotteryTeam> {
 
     @Override
@@ -58,22 +61,14 @@ public class DraftLottery {
 
     public static void main(String[] args) {
 
+        //Values to be assigned to a winning team.
         String firstPlace = "";
         String secondPlace = "";
         String thirdPlace = "";
         String fourthPlace = "";
-        String fifthPlace = "";
-        String sixthPlace = "";
-        String seventhPlace = "";
-        String eightPlace = "";
-        String ninthPlace = "";
-        String tenthPlace = "";
-        String eleventhPlace = "";
-        String twelvthPlace = "";
-        String thirteenthPlace = "";
-        String fourteenthPlace = "";
 
         //array list with all the lottery teams and their seeding going into the lottery.
+        //final placement is set to 1 as a placeholder.
         ArrayList<LotteryTeam> lotteryTeams = new ArrayList<LotteryTeam>();
         LotteryTeam newYork = new LotteryTeam();
         newYork.teamName = "New York";
@@ -147,13 +142,19 @@ public class DraftLottery {
         lotteryTeams.add(charlotte);
 
         
-        // ArrayList<LotteryTeam> lotteryTeams= { ("New York", 1), "Cleveland", "Phoenix", "Chicago", "Atlanta", "Washington", "New Orleans",
-        //                    "Dallas", "Memphis", "Minnesota", "Los Angeles", "Sacremento", "Miami", "Charlotte"  };
+        //botttomTwelve array is used to hold the losing twelve teams.
+        //It is later organized by seed and teams are given a final placement
         ArrayList<LotteryTeam> bottomTwelve = new ArrayList<LotteryTeam>();
+        //finalOrder array is used to hold all the teams later organized by final placement.
         ArrayList<LotteryTeam> finalOrder = new ArrayList<LotteryTeam>();
 
+        //This loop creates a number between 1-1000 and determines the winning team for picks
+        //1-4. It does not move on to the next pick until the current pick it is on has its own
+        //unique team.
         while (fourthPlace.length() == 0) {
+            //our random number to determine winners
             double winningNumber = (int) (Math.random() * ((1000 - 1) + 1)) + 1;
+            //our variable to assign team names to picks 1-4.
             String winner = "";
             if (winningNumber < 141) {
                 winner = "New York";
@@ -223,6 +224,8 @@ public class DraftLottery {
                 System.out.println("Winning Number: " + winningNumber);
             } 
         }
+
+        //This loop adds the losing teams to the bottomTwelve array.
         for (int i = 0; lotteryTeams.size() > i; i++) {
             if (lotteryTeams.get(i).teamName != firstPlace && lotteryTeams.get(i).teamName != secondPlace
                     && lotteryTeams.get(i).teamName != thirdPlace && lotteryTeams.get(i).teamName != fourthPlace) {
@@ -230,6 +233,7 @@ public class DraftLottery {
             }
         }
 
+        //This loop adds the winning teams to the finalOrder and assigns them a final placement.
         while(finalOrder.size()<4){
             if(finalOrder.size()== 0 ){
                 for (int i = 0; lotteryTeams.size() > i; i++){
@@ -262,6 +266,8 @@ public class DraftLottery {
             }
         }
 
+        //This sorts the losing twelve teams by original seed. It then gives the teams their placement 
+        // and add thems to the finalOrder array.
         Collections.sort(bottomTwelve, new SeedComparator());
         Integer placeCounter = 5;
         for (LotteryTeam team : bottomTwelve) {
@@ -270,6 +276,7 @@ public class DraftLottery {
             placeCounter++;
         }
 
+        //This sorts all the teams in the finalOrder array by their final placement.
         Collections.sort(finalOrder, new PlaceComparator());
         for (LotteryTeam team : finalOrder) {
             System.out.println(team.teamName);
