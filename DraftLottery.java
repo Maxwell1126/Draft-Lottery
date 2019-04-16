@@ -21,6 +21,7 @@ public class DraftLottery {
         String thirteenthPlace = "";
         String fourteenthPlace = "";
 
+        //array list with all the lottery teams and their seeding going into the lottery.
         ArrayList<LotteryTeam> lotteryTeams = new ArrayList<LotteryTeam>();
         LotteryTeam newYork = new LotteryTeam();
         newYork.teamName = "New York";
@@ -30,14 +31,60 @@ public class DraftLottery {
         cleveland.teamName = "Cleveland";
         cleveland.teamSeed = 2;
         lotteryTeams.add(cleveland);
+        LotteryTeam phoenix = new LotteryTeam();
+        phoenix.teamName = "Phoenix";
+        phoenix.teamSeed = 3;
+        lotteryTeams.add(phoenix);
+        LotteryTeam chicago = new LotteryTeam();
+        chicago.teamName = "Chicago";
+        chicago.teamSeed = 4;
+        lotteryTeams.add(chicago);
+        LotteryTeam atlanta = new LotteryTeam();
+        atlanta.teamName = "Atlantta";
+        atlanta.teamSeed = 5;
+        lotteryTeams.add(atlanta);
+        LotteryTeam washington = new LotteryTeam();
+        washington.teamName = "Washington";
+        washington.teamSeed = 6;
+        lotteryTeams.add(washington);
+        LotteryTeam newOrleans = new LotteryTeam();
+        newOrleans.teamName = "New Orleans";
+        newOrleans.teamSeed = 7;
+        lotteryTeams.add(newOrleans);
+        LotteryTeam dallas = new LotteryTeam();
+        dallas.teamName = "Dallas";
+        dallas.teamSeed = 8;
+        lotteryTeams.add(dallas);
+        LotteryTeam memphis = new LotteryTeam();
+        memphis.teamName = "Memphis";
+        memphis.teamSeed = 9;
+        lotteryTeams.add(memphis);
+        LotteryTeam minnesota = new LotteryTeam();
+        minnesota.teamName = "Minnesota";
+        minnesota.teamSeed = 10;
+        lotteryTeams.add(minnesota);
+        LotteryTeam losAngeles = new LotteryTeam();
+        losAngeles.teamName = "Los Angeles";
+        losAngeles.teamSeed = 11;
+        lotteryTeams.add(losAngeles);
+        LotteryTeam sacramento = new LotteryTeam();
+        sacramento.teamName = "Sacramento";
+        sacramento.teamSeed = 12;
+        lotteryTeams.add(sacramento);
+        LotteryTeam miami = new LotteryTeam();
+        miami.teamName = "Miami";
+        miami.teamSeed = 13;
+        lotteryTeams.add(miami);
+        LotteryTeam charlotte = new LotteryTeam();
+        charlotte.teamName = "Charlotte";
+        charlotte.teamSeed = 14;
+        lotteryTeams.add(charlotte);
 
-        for(int i = 0; lotteryTeams.size() > i; i++){
-            System.out.println(lotteryTeams.get(i).teamName +' '+ lotteryTeams.get(i).teamSeed);
-        }
+        
         // ArrayList<LotteryTeam> lotteryTeams= { ("New York", 1), "Cleveland", "Phoenix", "Chicago", "Atlanta", "Washington", "New Orleans",
         //                    "Dallas", "Memphis", "Minnesota", "Los Angeles", "Sacremento", "Miami", "Charlotte"  };
         ArrayList<LotteryTeam> bottomTwelve = new ArrayList<LotteryTeam>();
-
+        
 
         while (fourthPlace.length() == 0) {
             double winningNumber = (int) (Math.random() * ((1000 - 1) + 1)) + 1;
@@ -65,7 +112,7 @@ public class DraftLottery {
             } else if ((winningNumber >= 951) && (winningNumber <= 970)){
                 winner = "Los Angeles";
             } else if ((winningNumber >= 971) && (winningNumber <= 985)){
-                winner = "Sacremento";
+                winner = "Sacramento";
             } else if ((winningNumber >= 986) && (winningNumber <= 995)){
                 winner = "Miami";
             } else if ((winningNumber >= 996) && (winningNumber <= 1000)){
@@ -109,6 +156,16 @@ public class DraftLottery {
                         }
                 System.out.println("Winning Number: " + winningNumber);
             } 
+        }
+        for (int i = 0; lotteryTeams.size() > i; i++) {
+            if (lotteryTeams.get(i).teamName != firstPlace && lotteryTeams.get(i).teamName != secondPlace
+                    && lotteryTeams.get(i).teamName != thirdPlace && lotteryTeams.get(i).teamName != fourthPlace) {
+                bottomTwelve.add(lotteryTeams.get(i));
+            }
+        }
+
+        for (int i = 0; bottomTwelve.size() > i; i++) {
+            System.out.println(bottomTwelve.get(i).teamName);
         }
     }
 }
